@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="description" content="AI-powered resume matching and candidate ranking platform for recruiters and job seekers." />
+    <title>ResumeAI — Intelligent Resume Matching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      /* Critical pre-render styles */
+      body { margin: 0; background: #0a0a0f; }
+      #root-loader {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; align-items: center; justify-content: center;
+        background: #0a0a0f;
+      }
+      #root-loader .spinner {
+        width: 40px; height: 40px;
+        border: 3px solid rgba(139, 92, 246, 0.15);
+        border-top-color: #8b5cf6;
+        border-radius: 50%;
+        animation: loader-spin 0.8s linear infinite;
+      }
+      @keyframes loader-spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div id="root-loader"><div class="spinner"></div></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Remove loader once React mounts
+      window.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('root-loader');
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => loader.remove(), 300);
+          }, 100);
+        }
+      });
+    </script>
+  </body>
+</html>
