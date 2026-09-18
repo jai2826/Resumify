@@ -5,10 +5,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+def get_database_url() -> str:
+    url = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./resumify.db").strip()
+    if url.startswith("postgres://"):
+        return url.replace("postgres://", "postgresql+asyncpg://", 1)
+    elif url.startswith("postgresql://") and not url.startswith("postgresql+"):
+        return url.replace("postgresql://", "postgresql+asyncpg://", 1)
+    return url
+
 class Settings(BaseModel):
     groq_api_key: str = os.getenv("GROQ_API_KEY", "")
     groq_model: str = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
-    database_url: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./resume_matcher.db")
+    database_url: str = get_database_url()
     jwt_secret_key: str = os.getenv("JWT_SECRET_KEY", "a9f8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8")
     jwt_algorithm: str = os.getenv("JWT_ALGORITHM", "HS256")
     access_token_expire_minutes: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))

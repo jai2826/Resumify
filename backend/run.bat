@@ -1,5 +1,5 @@
 @echo off
-title AI Resume Matcher - Backend Server
+title Resumify - Backend Server
 cd /d "%~dp0"
 
 if not exist ".venv\Scripts\python.exe" (

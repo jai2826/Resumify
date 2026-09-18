@@ -101,7 +101,7 @@ export default function DemoJobSeekerPage() {
     <div className="min-h-screen bg-[#0a0a0f] flex flex-col font-sans">
       <Navbar variant="marketing" />
       
-      <main className="flex-grow max-w-4xl w-full mx-auto py-12 px-4 animate-fade-in-up">
+      <main className="flex-grow max-w-4xl w-full mx-auto pt-24 md:pt-28 pb-12 px-4 animate-fade-in-up">
         <div className="mb-8">
           <Link to="/" className="inline-flex items-center text-secondary hover:text-white transition-colors mb-6 text-sm">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
