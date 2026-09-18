@@ -1,4 +1,4 @@
-# AI Resume Matcher - Backend Launcher
+# Resumify - Backend Launcher
 $BackendDir = Join-Path $PSScriptRoot "backend"
 $PythonExe = Join-Path $BackendDir ".venv\Scripts\python.exe"
 
@@ -9,7 +9,7 @@ if (-not (Test-Path $PythonExe)) {
 
 Set-Location $BackendDir
 Write-Host "===================================================" -ForegroundColor Cyan
-Write-Host "  Starting AI Resume Matcher - Backend (Port 8000) " -ForegroundColor Green
+Write-Host "  Starting Resumify - Backend (Port 8000) " -ForegroundColor Green
 Write-Host "===================================================" -ForegroundColor Cyan
 Write-Host "Swagger Docs: http://localhost:8000/docs" -ForegroundColor Yellow
 Write-Host "Health Check: http://localhost:8000/api/health" -ForegroundColor Yellow

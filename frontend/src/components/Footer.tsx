@@ -48,7 +48,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center shadow-lg group-hover:shadow-indigo-500/50 transition-shadow">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold gradient-text">ResumeAI</span>
+              <span className="text-xl font-bold gradient-text">Resumify</span>
             </Link>
             <p className="text-sm text-secondary">
               AI-powered resume analysis that understands skills, experience, and potential.
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted">
-            © 2024 ResumeAI. All rights reserved.
+            © 2024 Resumify. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted hover:text-primary transition-colors">

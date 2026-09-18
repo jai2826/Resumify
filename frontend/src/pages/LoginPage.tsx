@@ -21,7 +21,7 @@ export default function LoginPage() {
       await login({ email, password });
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.message || 'Failed to login. Please try again.');
+      setError(err.response?.data?.detail || err.message || 'Failed to login. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -39,7 +39,7 @@ export default function LoginPage() {
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20">
               <Sparkles className="text-white w-6 h-6" />
             </div>
-            <span className="text-2xl font-bold gradient-text">ResumeAI</span>
+            <span className="text-2xl font-bold gradient-text">Resumify</span>
           </div>
 
           <h1 className="text-4xl font-bold gradient-text mb-6 animate-fade-in-up delay-100 whitespace-pre-line">
@@ -79,7 +79,7 @@ export default function LoginPage() {
         <div className="max-w-md w-full mx-auto">
           <div className="mb-8 text-center sm:text-left animate-fade-in-up">
             <h2 className="text-2xl font-bold text-primary mb-2">Welcome back</h2>
-            <p className="text-secondary">Sign in to continue to ResumeAI</p>
+            <p className="text-secondary">Sign in to continue to Resumify</p>
           </div>
 
           <form onSubmit={handleSubmit} className="card-dark p-6 md:p-8 rounded-2xl animate-fade-in-up delay-200">
@@ -98,7 +98,7 @@ export default function LoginPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="input-dark w-full pl-10 py-2.5 rounded-lg text-primary placeholder-muted focus:ring-2 focus:ring-violet-500/50"
+                    className="input-dark w-full pl-11 pr-4 py-2.5 rounded-lg text-primary placeholder-muted focus:ring-2 focus:ring-violet-500/50"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -123,7 +123,7 @@ export default function LoginPage() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="input-dark w-full pl-10 py-2.5 rounded-lg text-primary placeholder-muted focus:ring-2 focus:ring-violet-500/50"
+                    className="input-dark w-full pl-11 pr-4 py-2.5 rounded-lg text-primary placeholder-muted focus:ring-2 focus:ring-violet-500/50"
                     placeholder="••••••••"
                   />
                 </div>

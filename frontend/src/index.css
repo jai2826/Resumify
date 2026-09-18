@@ -5,6 +5,7 @@
    ============================================ */
 
 :root {
+  color-scheme: dark;
   --bg-primary: #0a0a0f;
   --bg-secondary: #12121a;
   --bg-elevated: #1a1a2e;
@@ -36,6 +37,7 @@
    ============================================ */
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -448,123 +450,129 @@ body {
    BUTTON STYLES
    ============================================ */
 
-.btn-primary {
-  background: linear-gradient(135deg, #8b5cf6, #6366f1);
-  color: #fff;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  padding: 10px 24px;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  cursor: pointer;
-}
+@layer components {
+  .btn-primary {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #fff;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 10px 24px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+  }
 
-.btn-primary:hover {
-  box-shadow: 0 0 24px rgba(139, 92, 246, 0.3), 0 4px 12px rgba(0,0,0,0.3);
-  transform: translateY(-1px);
-}
+  .btn-primary:hover {
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.3), 0 4px 12px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+  }
 
-.btn-primary:active {
-  transform: translateY(0);
-}
+  .btn-primary:active {
+    transform: translateY(0);
+  }
 
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-}
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
 
-.btn-primary:hover::after {
-  transform: translateX(100%);
-}
+  .btn-primary:hover::after {
+    transform: translateX(100%);
+  }
 
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
-  font-weight: 500;
-  border-radius: var(--radius-md);
-  padding: 10px 24px;
-  font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    padding: 10px 24px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
 
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 
-.btn-ghost {
-  background: transparent;
-  color: var(--text-secondary);
-  font-weight: 500;
-  border-radius: var(--radius-md);
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
 
-.btn-ghost:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
-}
+  .btn-ghost:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+  }
 
-/* ============================================
-   INPUT STYLES
-   ============================================ */
+  .input-dark {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 10px 14px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    outline: none;
+    width: 100%;
+  }
 
-.input-dark {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
-  padding: 10px 14px;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  outline: none;
-  width: 100%;
-}
+  .input-dark::placeholder {
+    color: var(--text-muted);
+  }
 
-.input-dark::placeholder {
-  color: var(--text-muted);
-}
+  .input-dark:focus {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1), 0 0 16px rgba(139, 92, 246, 0.05);
+  }
 
-.input-dark:focus {
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1), 0 0 16px rgba(139, 92, 246, 0.05);
-}
+  select.input-dark,
+  select.input-dark option,
+  option {
+    background-color: #12121a !important;
+    color: #f0f0f5 !important;
+    color-scheme: dark;
+  }
 
-.textarea-dark {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
-  padding: 12px 14px;
-  font-size: 13px;
-  line-height: 1.6;
-  transition: all 0.2s ease;
-  outline: none;
-  width: 100%;
-  resize: vertical;
-  font-family: 'JetBrains Mono', monospace;
-}
+  .textarea-dark {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    transition: all 0.2s ease;
+    outline: none;
+    width: 100%;
+    resize: vertical;
+    font-family: 'JetBrains Mono', monospace;
+  }
 
-.textarea-dark::placeholder {
-  color: var(--text-muted);
-}
+  .textarea-dark::placeholder {
+    color: var(--text-muted);
+  }
 
-.textarea-dark:focus {
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+  .textarea-dark:focus {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+  }
 }
 
 /* ============================================

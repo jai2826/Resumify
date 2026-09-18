@@ -21,7 +21,7 @@ export default function Navbar({ variant = 'marketing', backendOnline, user, onL
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center shadow-lg group-hover:shadow-indigo-500/50 transition-shadow">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
-          <span className="text-xl font-bold gradient-text">ResumeAI</span>
+          <span className="text-xl font-bold gradient-text">Resumify</span>
         </Link>
 
         {/* Desktop Nav - Marketing */}

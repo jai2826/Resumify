@@ -1,5 +1,5 @@
 @echo off
-title AI Resume Matcher - Backend Server
+title Resumify - Backend Server
 cd /d "%~dp0backend"
 
 if not exist ".venv\Scripts\python.exe" (
@@ -10,7 +10,7 @@ if not exist ".venv\Scripts\python.exe" (
 )
 
 echo ===================================================
-echo   Starting AI Resume Matcher - Backend (Port 8000)
+echo   Starting Resumify - Backend (Port 8000)
 echo ===================================================
 echo Swagger Docs: http://localhost:8000/docs
 echo Health Check: http://localhost:8000/api/health

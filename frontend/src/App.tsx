@@ -107,7 +107,7 @@ function DashboardContent() {
     <div className="flex flex-col min-h-screen">
       <Navbar variant="dashboard" backendOnline={backendOnline} user={user} onLogout={logout} />
       
-      <main className="max-w-7xl mx-auto px-6 py-8 w-full flex-1">
+      <main className="max-w-7xl mx-auto px-6 pt-24 md:pt-28 pb-12 w-full flex-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-6">
             <JobDescriptionInput
@@ -157,7 +157,7 @@ function DashboardContent() {
           <div className="lg:col-span-7 space-y-6">
             <div className="glass rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="relative w-full sm:w-72">
-                <Search className="w-4 h-4 absolute left-3 top-3 text-muted" />
+                <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted pointer-events-none" />
                 <input
                   type="text"
                   placeholder="Search by name or skill..."
@@ -173,11 +173,12 @@ function DashboardContent() {
                   <select
                     value={minScoreFilter}
                     onChange={(e) => setMinScoreFilter(Number(e.target.value))}
-                    className="input-dark py-1.5 px-3 text-sm rounded-lg"
+                    style={{ colorScheme: "dark" }}
+                    className="input-dark py-1.5 px-3 text-sm rounded-lg cursor-pointer bg-[#12121a] text-primary"
                   >
-                    <option value={0}>All Scores</option>
-                    <option value={80}>80+ Points</option>
-                    <option value={60}>60+ Points</option>
+                    <option value={0} className="bg-[#12121a] text-[#f0f0f5]">All Scores</option>
+                    <option value={80} className="bg-[#12121a] text-[#f0f0f5]">80+ Points</option>
+                    <option value={60} className="bg-[#12121a] text-[#f0f0f5]">60+ Points</option>
                   </select>
                 </div>
 

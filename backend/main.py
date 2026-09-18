@@ -29,7 +29,7 @@ async def lifespan(app: FastAPI):
     logger.info("Application shutting down.")
 
 app = FastAPI(
-    title="AI Resume Parser & Job Matcher API",
+    title="Resumify - AI Resume Parser & Job Matcher API",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -57,7 +57,7 @@ async def health_check():
         "version": "1.0.0",
         "groq_configured": bool(settings.groq_api_key),
         "model": settings.groq_model,
-        "database": "sqlite"
+        "database": "postgresql" if "postgres" in settings.database_url else "sqlite"
     }
 
 if __name__ == "__main__":

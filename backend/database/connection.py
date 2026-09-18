@@ -5,7 +5,13 @@ from config import settings
 class Base(DeclarativeBase):
     pass
 
-engine = create_async_engine(settings.database_url, echo=False, connect_args={"check_same_thread": False})
+connect_args = {}
+if "sqlite" in settings.database_url:
+    connect_args["check_same_thread"] = False
+elif "postgresql+asyncpg" in settings.database_url:
+    connect_args["statement_cache_size"] = 0
+
+engine = create_async_engine(settings.database_url, echo=False, connect_args=connect_args)
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 async def get_db():
